@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+}
+.html {
+    --full-height:0px;
+    --full-width:0px;
+}
+
+.head{
+    background-color: #6ebafc;
+    display: block;
+    height: 120px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px#b4b4b4;
+    text-align: center;
+}
+
+.head h1 {
+    color:white;
+    font-family: "Bookman Old Style";
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    background-color: #648dc4;
+    padding: 4px 4px 4px 4px;
+    border-radius: 5px;
+    display: initial;
+    margin: 0 auto;
+    width: 76px;
+    min-height: 12px;
+    font-family: cursive;
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.content {
+    height:var(--full-height);
+    width:var(--full-width);
+    background-color: #eaeaea;
+
+}
+
+.addEmployee {
+    background-color:white;
+    width:var(--full-width);
+    height:15px;
+    margin:15px 0 15px 0;
+    padding:5px 0 5px 0;
+}
+
+.addEmployee input {
+    margin-left:10px;
+}
+
+.showEmployee{
+    background-color: #ffffff;
+    width:var(--full-width);
+    height:15px;
+    margin:15px 0 15px 0;
+    padding:5px 0 5px 0;
+}
+
+.field{
+    float:left;
+    padding:5px;
+    margin-left:10px
+}

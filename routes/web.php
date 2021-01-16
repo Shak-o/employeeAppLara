@@ -15,10 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::resource('employees',EmployeeController::class);
 Route::resource('salary',SalaryController::class);
-Route::view('home','/layout/main');
+Route::view('/','home');

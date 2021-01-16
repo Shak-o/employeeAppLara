@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Salary extends Model
 {
-    use HasFactory;
+    public $fillable = ['component_name','quantity'];
+    public $table = 'salaries';
+    public $timestamps = true;
 }
