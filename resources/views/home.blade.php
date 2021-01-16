@@ -48,7 +48,7 @@
                         for(var i = 0; i !==response.length; i++){
                             $("#employeeConteiner").append(
                                 '<div class="showEmployee" id ="showEmployee"> '+
-                                '<div id="name" class="field">'+ response[i]["name"] +'</div>  <div id="surname" class="field">'+response[i]["surname"]+'</div> <div id="p_id" class="field">'+response[i]["p_id"]+'</div> <div id="org_id" class="field">4</div> <div id="salary" class="field">5</div> <button type="submit" >edit</button> <button type="submit">delete</button>'
+                                '<div id="id" style="display:none">'+ response[i]["id"] +'</div> <div id="name" class="field">'+ response[i]["name"] +'</div>  <div id="surname" class="field">'+response[i]["surname"]+'</div> <div id="p_id" class="field">'+response[i]["p_id"]+'</div> <div id="org_id" class="field">'+response[i]["org_id"]+'</div> <div id="salary" class="field">5</div> <button type="submit" >edit</button> <button type="submit" data-id="'+response[i]["id"]+'" class="delete">delete</button>'
                                 +'</div>'
                             );
                         }
@@ -64,7 +64,7 @@
                     for(var i = 0; i !==response.length; i++){
                         $("#employeeConteiner").append(
                             '<div class="showEmployee" id ="showEmployee"> '+
-                            '<div id="name" class="field">'+ response[i]["name"] +'</div>  <div id="surname" class="field">'+response[i]["surname"]+'</div> <div id="p_id" class="field">'+response[i]["p_id"]+'</div> <div id="org_id" class="field">4</div> <div id="salary" class="field">5</div> <button type="submit" >edit</button> <button type="submit">delete</button>'
+                            '<div id="id"  style="display:none">'+ response[i]["id"] +'</div> <div id="name" class="field">'+ response[i]["name"] +'</div>  <div id="surname" class="field">'+response[i]["surname"]+'</div> <div id="p_id" class="field">'+response[i]["p_id"]+'</div> <div id="org_id" class="field">'+response[i]["org_id"]+'</div> <div id="salary" class="field">5</div> <button type="submit" >edit</button> <button type="submit"  data-id="'+response[i]["id"]+'" class="delete">delete</button>'
                             +'</div>'
                         );
                     }
@@ -96,8 +96,18 @@
                     error: function (){
 
                     },
+                });
+            });
 
-
+            $('.delete').on('click',function(event){
+                var id = $(event.target).data("id");
+                event.preventDefault();
+                $.ajax({
+                    url:'employees/'+id,
+                    type:'POST',
+                    data:{
+                      id:id
+                    },
                 });
             });
         });

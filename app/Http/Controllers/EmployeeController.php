@@ -95,6 +95,6 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Employee::where('id',$id)->delete();
     }
 }
